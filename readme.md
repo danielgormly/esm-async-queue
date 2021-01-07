@@ -1,5 +1,5 @@
-# async-queue
-A single class `Queue` to create an immediately starting queue of asynchronous or synchronous tasks, processing *n* tasks concurrently. Dependency free.
+# esm-async-queue
+A single class `Queue` to create an immediately starting queue of asynchronous or synchronous tasks, processing *n* tasks concurrently. Dependency free. Exported as an esm module. Typescript definitions included.
 
 ## Basic usage:
 ```javascript

@@ -54,7 +54,7 @@ export class Queue {
     if (this.tasksPendingArr.length === 0) return;
     const queueAvailability = this.concurrency - this.tasksProcessing;
     const nextTasks = this.tasksPendingArr.slice(0, queueAvailability);
-    this.tasksPendingArr = this.tasksPendingArr = this.tasksPendingArr.slice(queueAvailability)
+    this.tasksPendingArr = this.tasksPendingArr = this.tasksPendingArr.slice(queueAvailability);
     this.tasksProcessing++;
     nextTasks
       .map((nextTask) => {
