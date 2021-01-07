@@ -1,7 +1,15 @@
 # esm-async-queue
 A single class `Queue` to create an immediately starting queue of asynchronous or synchronous tasks, processing *n* tasks concurrently. Dependency free. Exported as an esm module. Typescript definitions included.
 
+## Install
+```bash
+npm install esm-async-queue
+```
+
 ## Basic usage:
+
+Example of 
+
 ```javascript
 import { Queue } from './index.js';
 
@@ -45,18 +53,20 @@ Add a task to the queue. Processes immediately if the total length of existing t
 **concurrency**: *integer* show count of maximum concurrent tasks.
 
 ## Events
-How to use an event:
 ```javascript
-// This script will print true after 200ms, when the queue is emptied.
+// Example: This script will print true when all items have been processed (after 200ms).
 const queue = new Queue({ concurrency: 2 });
 queue.on('idle', () => console.log(queue.length === 0));
 queue.push(() => delayedResolution(200));
 ```
 
 **idle:** Fired when the total queue length, including tasks processing drops to 0.
+
 **taskProcessing:** Fired when a task begins processing.
+
 **taskProcessed:** Fired when a task completes.
+
 **taskPushed:** Fired when a task is pushed to the queue.
 
-#### Development notes
+## Development notes
 See [development.md](./development.md)
