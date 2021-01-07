@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "module": "ESNext",
+    "target": "ESNext",
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "outDir": "dist",
+    "moduleResolution": "node",
+    "strict": false,
+    "esModuleInterop": true,
+    "declaration": true
+  },
+  "files": [
+    "src/index.ts"
+  ]
+}
