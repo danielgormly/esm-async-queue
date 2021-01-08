@@ -1,7 +1,7 @@
 {
   "name": "esm-async-queue",
   "version": "0.0.1",
-  "description": "A single class `Queue` to create an immediately starting queue of asynchronous or synchronous tasks, processing *n* tasks concurrently. Dependency free.",
+  "description": "Immediately starting queues of asynchronous or synchronous functions, processing *n* function concurrently. Dependency free.",
   "main": "index.js",
   "scripts": {
     "start": "node --loader ts-node/esm ./src/index.ts",
