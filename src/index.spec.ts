@@ -5,15 +5,16 @@ import { delayedResolution } from './helpers.js';
 test('Rudimentary test', (t) => {
   t.plan(5);
   const queue = new Queue({ concurrency: 2 });
-  queue.push(() => delayedResolution(200));
-  queue.push(() => delayedResolution(200));
-  queue.push(() => delayedResolution(200));
-  queue.push(() => delayedResolution(200));
+  const item1 = new Promise((resolve) => queue.push(() => delayedResolution(200).then(resolve)));
+  const item2 = new Promise((resolve) => queue.push(() => delayedResolution(200).then(resolve)));
+  const item3 = new Promise((resolve) => queue.push(() => delayedResolution(200).then(resolve)));
   queue.subscribe('taskProcessed', () => {
     t.true(true, 'taskProcessed event captured');
   });
   queue.subscribe('idle', () => {
     t.true(true, 'idle event captured');
-    t.end();
+  });
+  Promise.all([item1, item2, item3]).then(() => {
+    t.true(true, 'finished');
   });
 });

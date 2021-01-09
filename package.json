@@ -1,6 +1,6 @@
 {
   "name": "esm-async-queue",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "description": "Immediately starting queues of asynchronous or synchronous functions, processing *n* function concurrently. Dependency free.",
   "main": "index.js",
   "scripts": {
