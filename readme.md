@@ -60,11 +60,10 @@ Add a task to the queue. Processes immediately if the total length of existing t
 
 ## Events
 ```javascript
-// Example: This script will print true when all items have been processed (after 200ms).
+// Example: This script will print true when all items have been processed (after 200ms). Finally, unsubscribe.
 const queue = new Queue({ concurrency: 2 });
-const unsubscribe = queue.on('idle', () => console.log(queue.length === 0));
-queue.push(() => delayedResolution(200)
-  .then(() => unsubscribe()));
+const unsubscribe = queue.on('idle', () => console.log(queue.length === 0)); // the returning function allows you to remove a subscription
+queue.push(() => delayedResolution(200));
 ```
 
 **idle:** Fired when the total queue length, including tasks processing drops to 0.
