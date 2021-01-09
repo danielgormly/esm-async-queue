@@ -17,3 +17,4 @@ npm test
 ### TODO:
 - Linting setup
 - Return promises from Queue#push()
+- Improve typing

@@ -1,7 +1,15 @@
 {
   "name": "esm-async-queue",
-  "version": "0.0.4",
-  "description": "Immediately starting queues of asynchronous or synchronous functions, processing *n* function concurrently. Dependency free.",
+  "version": "0.1.0",
+  "description": "Immediately starting queue of asynchronous or synchronous tasks, processing n function(s) concurrently. Dependency free.",
+  "keywords": [
+    "promise",
+    "async",
+    "queue",
+    "tasks",
+    "esm",
+    "typescript"
+  ],
   "main": "index.js",
   "scripts": {
     "start": "node --loader ts-node/esm ./src/index.ts",
@@ -9,8 +17,13 @@
     "test": "node --loader ts-node/esm ./src/index.spec.ts"
   },
   "type": "module",
-  "author": "",
-  "license": "ISC",
+  "author": "Daniel Gormly",
+  "homepage": "https://github.com/danielgormly/esm-async-queue#readme",
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/danielgormly/esm-async-queue.git"
+  },
+  "license": "0BSD",
   "devDependencies": {
     "tape": "^5.1.1",
     "ts-node": "^9.1.1",

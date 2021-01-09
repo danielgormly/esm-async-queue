@@ -1,7 +1,7 @@
 ![Publish on NPM](https://github.com/danielgormly/esm-async-queue/workflows/Publish%20on%20NPM/badge.svg) ![NPM Version](https://badgen.net/npm/v/esm-async-queue)
 
 # esm-async-queue
-A single class `Queue` to create an immediately starting queue of asynchronous or synchronous functions, processing *n* functions concurrently. Dependency free. Exported as an esm module. Typescript definitions included.
+A single class `Queue` to create an immediately starting queue of asynchronous or synchronous functions, processing *n* tasks concurrently. Dependency free. Exported as an esm module. Typescript definitions included.
 
 ## Install
 ```bash
@@ -62,8 +62,9 @@ Add a task to the queue. Processes immediately if the total length of existing t
 ```javascript
 // Example: This script will print true when all items have been processed (after 200ms).
 const queue = new Queue({ concurrency: 2 });
-queue.on('idle', () => console.log(queue.length === 0));
-queue.push(() => delayedResolution(200));
+const unsubscribe = queue.on('idle', () => console.log(queue.length === 0));
+queue.push(() => delayedResolution(200)
+  .then(() => unsubscribe()));
 ```
 
 **idle:** Fired when the total queue length, including tasks processing drops to 0.
