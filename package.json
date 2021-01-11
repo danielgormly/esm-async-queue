@@ -1,6 +1,6 @@
 {
   "name": "esm-async-queue",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "Immediately starting queue of asynchronous or synchronous tasks, processing n function(s) concurrently. Dependency free.",
   "keywords": [
     "promise",
@@ -10,7 +10,7 @@
     "esm",
     "typescript"
   ],
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
     "start": "node --loader ts-node/esm ./src/index.ts",
     "build": "tsc",
